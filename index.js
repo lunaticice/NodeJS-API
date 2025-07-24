@@ -13,15 +13,38 @@ app.use(
   })
 );
 
-let users = [
-  { id: 1, name: 'John Doe' },
-  { id: 2, name: 'Leonore' },
+const users = [
+  {
+    id: 1,
+    name: 'Alice Johnson',
+    email: 'alice@example.com',
+    age: 25,
+    role: 'editor',
+  },
+  {
+    id: 2,
+    name: 'Bob Smith',
+    email: 'bob@example.com',
+    age: 32,
+    role: 'viewer',
+  },
+  {
+    id: 3,
+    name: 'Charlie Brown',
+    email: 'charlie@example.com',
+    age: 30,
+    role: 'admin',
+  },
 ];
 
 console.log('Users:', users);
 
 app.get('/users', (req, res) => {
-  res.json(users);
+  res.json({
+    success: true,
+    count: users.length,
+    users: users,
+  });
 });
 
 app.get('/users/:id', (req, res) => {
