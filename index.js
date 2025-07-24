@@ -40,11 +40,7 @@ const users = [
 console.log('Users:', users);
 
 app.get('/users', (req, res) => {
-  res.json({
-    success: true,
-    count: users.length,
-    users: users,
-  });
+  res.json(users);
 });
 
 app.get('/users/:id', (req, res) => {
